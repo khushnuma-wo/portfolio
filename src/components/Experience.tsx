@@ -8,16 +8,9 @@ export function Experience() {
       <div className="container-page">
         <SectionHeader eyebrow="Experience" title="Where I work" />
 
-        <ol className="relative mt-12 space-y-8 border-l border-white/10 pl-6 sm:pl-10">
+        <ol className="mt-12 space-y-8">
           {experience.map((job) => (
-            <li key={job.company} className="relative">
-              <span
-                className="absolute -left-[31px] top-6 flex h-4 w-4 items-center justify-center rounded-full border border-accent/60 bg-ink-950 sm:-left-[47px]"
-                aria-hidden="true"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              </span>
-
+            <li key={job.company}>
               <Reveal className="card p-6 sm:p-8">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
