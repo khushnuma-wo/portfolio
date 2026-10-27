@@ -142,16 +142,16 @@ export const projects: Project[] = [
     description:
       'A SaaS platform for payments, subscriptions, online checkout, POS, shipping, accounting and team management.',
     overview:
-      'PAID brings a business’s payments and operations into one platform: Stripe Connect payments, invoices and subscriptions, in-person card payments, e-commerce checkout, shipping accounts, accounting sync and team roles — all served by a TypeScript REST API.',
-    role: 'Backend developer — REST APIs, TypeScript migration, integrations and deployment.',
-    technologies: ['Node.js', 'Express.js', 'TypeScript', 'MongoDB', 'JWT', 'Socket.IO', 'Stripe Connect', 'Swagger', 'SendGrid', 'PM2', 'Docker', 'GCP Cloud Run', 'Secret Manager', 'Cloud Storage', 'GitHub Actions'],
+      'PAID brings a business’s payments and operations into one platform: Stripe Connect payments, invoices and subscriptions, in-person card payments, e-commerce checkout, shipping accounts, accounting sync and team roles — with a TypeScript REST API and a React.js web app.',
+    role: 'Full-stack developer — backend REST APIs and TypeScript migration, React.js frontend, integrations and deployment.',
+    technologies: ['Node.js', 'Express.js', 'TypeScript', 'MongoDB', 'React.js', 'Redux Toolkit', 'Material UI', 'React Hook Form', 'i18next', 'Vite', 'JWT', 'Socket.IO', 'Stripe Connect', 'Stripe Elements', 'Stripe Terminal', 'Swagger', 'SendGrid', 'PM2', 'Docker', 'Nginx', 'GCP Cloud Run', 'Secret Manager', 'Cloud Storage', 'GitHub Actions'],
     keyFeatures: [
       'Migrated the backend from JavaScript to TypeScript',
       'REST APIs for accounts, billing, subscriptions, teams and admin',
-      'Stripe Connect payments, subscriptions, refunds and Terminal (POS)',
-      'JWT, Google / Facebook OAuth and role-based access control',
+      'React.js, Redux Toolkit and Material UI web app for payments, invoicing and admin',
+      'Stripe Connect payments, subscriptions, refunds, disputes and Terminal (POS)',
       'Ecwid, Railz, ShipTime, Duda and SendGrid integrations',
-      'Docker deployments to Cloud Run with GitHub Actions',
+      'Docker deployments of the API and frontend to Cloud Run',
     ],
     details: [
       {
@@ -178,6 +178,17 @@ export const projects: Project[] = [
         ],
       },
       {
+        title: 'Frontend',
+        points: [
+          'Developed React.js screens with TypeScript, Redux Toolkit and Material UI for payments, invoicing, subscriptions & billing, reports and the admin dashboard.',
+          'Built invoice creation and tracking, dispute management with evidence submission, plan changes, bank accounts and revenue report downloads (PDF / CSV).',
+          'Built the Ecwid payment extension UI and the ShipTime ↔ PAID account redirection flow.',
+          'Built admin features: support & feedback management, partner management and user session history.',
+          'Added English / French localization with i18next and real-time notifications with Socket.IO.',
+          'Refactored class components to functional components and moved forms from Redux Form to React Hook Form with Yup validation.',
+        ],
+      },
+      {
         title: 'Integrations & Real-time',
         points: [
           'Integrated Ecwid store checkout, Railz accounting sync, ShipTime shipping, Duda website builder and SendGrid email.',
@@ -190,6 +201,7 @@ export const projects: Project[] = [
         points: [
           'Ran and managed the Node.js API with PM2 on the VM server, then migrated it to Docker containers on Google Cloud Run.',
           'Containerised the API with Docker and automated deployments to Google Cloud Run using GitHub Actions.',
+          'Moved the React frontend to Cloud Run (Docker + Nginx), with production builds uploaded to Google Cloud Storage and served by the API service.',
           'Managed application secrets with GCP Secret Manager.',
         ],
       },
