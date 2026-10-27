@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khushnuma Baluchi — Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Khushnuma Baluchi is a Full Stack Developer in Surat, India, building scalable SaaS applications, REST APIs, payment integrations, real-time features and cloud deployments with React, Angular, Node.js, NestJS and TypeScript."
+    />
+    <meta name="author" content="Khushnuma Baluchi" />
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#07090f" media="(prefers-color-scheme: dark)" />
+    <script>
+      // Set the theme before the page paints, so there is no light/dark flash.
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('theme');
+        } catch (e) {}
+        var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', dark);
+      })();
+    </script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Khushnuma Baluchi — Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Building scalable SaaS applications, robust APIs, and modern web experiences."
+    />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

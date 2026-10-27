@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Light theme (default). Values are RGB channels used by tailwind.config.js. */
+  :root {
+    color-scheme: light;
+    --white: 15 23 42;
+    --ink-950: 246 248 251;
+    --ink-900: 255 255 255;
+    --ink-850: 240 243 247;
+    --ink-800: 232 236 242;
+    --ink-700: 226 232 240;
+    --ink-600: 203 213 225;
+    --slate-50: 15 23 42;
+    --slate-100: 30 41 59;
+    --slate-200: 30 41 59;
+    --slate-300: 51 65 85;
+    --slate-400: 71 85 105;
+    --slate-500: 100 116 139;
+    --accent: 15 118 110;
+    --accent-strong: 13 148 136;
+    --accent-soft: 13 148 136;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --white: 255 255 255;
+    --ink-950: 7 9 15;
+    --ink-900: 11 14 22;
+    --ink-850: 16 20 31;
+    --ink-800: 21 26 40;
+    --ink-700: 31 38 56;
+    --ink-600: 44 53 80;
+    --slate-50: 248 250 252;
+    --slate-100: 241 245 249;
+    --slate-200: 226 232 240;
+    --slate-300: 203 213 225;
+    --slate-400: 148 163 184;
+    --slate-500: 100 116 139;
+    --accent: 94 234 212;
+    --accent-strong: 45 212 191;
+    --accent-soft: 153 246 228;
+  }
+
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-slate-300 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-slate-50;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-ink-950;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply relative py-20 sm:py-28;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent;
+  }
+
+  .section-title {
+    @apply mt-3 text-3xl font-bold tracking-tight sm:text-4xl;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/[0.07] bg-ink-900/70 backdrop-blur-sm;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-slate-300;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-ink-950 hover:bg-accent-soft;
+  }
+
+  .btn-secondary {
+    @apply btn border border-white/15 bg-white/[0.03] text-slate-100 hover:border-accent/50 hover:bg-white/[0.06];
+  }
+
+  .btn-ghost {
+    @apply btn text-slate-300 hover:text-white;
+  }
+
+  .field {
+    @apply mt-1.5 w-full rounded-xl border border-white/10 bg-ink-850 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 transition-colors focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/30;
+  }
+
+  .field-error {
+    @apply border-rose-400/60 focus:border-rose-400 focus:ring-rose-400/30;
+  }
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(var(--white) / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--white) / 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+dialog::backdrop {
+  background: rgb(3 5 10 / 0.75);
+  backdrop-filter: blur(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
