@@ -85,9 +85,9 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
             {/* Right: the work, grouped by area */}
             <div className="p-6 sm:p-8 lg:pt-16">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">What I did</h3>
-              <div className="mt-6 grid gap-x-8 gap-y-8 sm:grid-cols-2">
+              <div className="mt-6 divide-y divide-white/[0.06]">
                 {project.details.map((group) => (
-                  <section key={group.title}>
+                  <section key={group.title} className="py-6 first:pt-0 last:pb-0">
                     <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-100">{group.title}</h4>
                     <ul className="mt-3 space-y-2.5">
                       {group.points.map((point) => (
