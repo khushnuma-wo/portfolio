@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import type { Project } from '../data/portfolio';
 import { ProjectLinks } from './Projects';
-import { ProjectVisual, accentStyles } from './ProjectVisual';
+import { accentStyles } from './ProjectVisual';
 
 /** Case-study view built on the native <dialog>, which gives focus trapping and Escape-to-close for free. */
 export function ProjectDialog({ project, onClose }: { project: Project | null; onClose: () => void }) {
@@ -33,27 +33,23 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
       onClose={handleClose}
       onClick={(e) => e.target === ref.current && ref.current?.close()}
       aria-labelledby="project-dialog-title"
-      className="m-0 h-[100dvh] max-h-none w-screen max-w-none overflow-y-auto border-0 bg-ink-900 p-0 text-slate-300 backdrop:bg-transparent"
+      className="m-auto max-h-[92vh] w-[calc(100%-2rem)] max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-ink-900 p-0 text-slate-300 shadow-2xl shadow-black/50 backdrop:bg-transparent"
     >
       {project && accent && (
-        <article className="relative min-h-full">
+        <article className="relative">
           <button
             type="button"
             onClick={() => ref.current?.close()}
-            className="fixed right-4 top-4 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-ink-950/80 text-slate-200 hover:text-white"
+            className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-ink-950/80 text-slate-200 hover:text-white"
             aria-label="Close case study"
           >
             <X className="h-5 w-5" />
           </button>
 
-          <div className="grid min-h-[100dvh] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-            {/* Left: summary — stays in view on large screens while the details scroll */}
-            <div className="border-b border-white/[0.06] lg:sticky lg:top-0 lg:max-h-[100dvh] lg:self-start lg:overflow-y-auto lg:border-b-0 lg:border-r">
-              <div className="aspect-[16/8]">
-                <ProjectVisual project={project} />
-              </div>
-
-              <div className="p-6 sm:p-8">
+          <div className="grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+            {/* Left: summary */}
+            <div className="border-b border-white/[0.06] lg:border-b-0 lg:border-r">
+              <div className="p-6 pr-16 sm:p-8 sm:pr-16 lg:pr-8">
                 <p className={`font-mono text-xs uppercase tracking-widest ${accent.text}`}>{project.category}</p>
                 <h2 id="project-dialog-title" className="mt-2 text-3xl font-bold tracking-tight">
                   {project.name}
@@ -83,7 +79,7 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
             </div>
 
             {/* Right: the work, grouped by area */}
-            <div className="mx-auto w-full max-w-4xl p-6 sm:p-10 lg:px-14 lg:pt-20">
+            <div className="p-6 sm:p-8 lg:pr-16">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">What I did</h3>
               <div className="mt-6 divide-y divide-white/[0.06]">
                 {project.details.map((group) => (
