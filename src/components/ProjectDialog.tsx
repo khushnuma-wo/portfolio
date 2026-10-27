@@ -33,22 +33,22 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
       onClose={handleClose}
       onClick={(e) => e.target === ref.current && ref.current?.close()}
       aria-labelledby="project-dialog-title"
-      className="m-auto max-h-[92vh] w-[calc(100%-2rem)] max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-ink-900 p-0 text-slate-300 shadow-2xl shadow-black/50 backdrop:bg-transparent"
+      className="m-0 h-[100dvh] max-h-none w-screen max-w-none overflow-y-auto border-0 bg-ink-900 p-0 text-slate-300 backdrop:bg-transparent"
     >
       {project && accent && (
-        <article className="relative">
+        <article className="relative min-h-full">
           <button
             type="button"
             onClick={() => ref.current?.close()}
-            className="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-ink-950/80 text-slate-200 hover:text-white"
+            className="fixed right-4 top-4 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-ink-950/80 text-slate-200 hover:text-white"
             aria-label="Close case study"
           >
             <X className="h-5 w-5" />
           </button>
 
-          <div className="grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-            {/* Left: summary */}
-            <div className="border-b border-white/[0.06] lg:border-b-0 lg:border-r">
+          <div className="grid min-h-[100dvh] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+            {/* Left: summary — stays in view on large screens while the details scroll */}
+            <div className="border-b border-white/[0.06] lg:sticky lg:top-0 lg:max-h-[100dvh] lg:self-start lg:overflow-y-auto lg:border-b-0 lg:border-r">
               <div className="aspect-[16/8]">
                 <ProjectVisual project={project} />
               </div>
@@ -83,7 +83,7 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
             </div>
 
             {/* Right: the work, grouped by area */}
-            <div className="p-6 sm:p-8 lg:pt-16">
+            <div className="mx-auto w-full max-w-4xl p-6 sm:p-10 lg:px-14 lg:pt-20">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">What I did</h3>
               <div className="mt-6 divide-y divide-white/[0.06]">
                 {project.details.map((group) => (
