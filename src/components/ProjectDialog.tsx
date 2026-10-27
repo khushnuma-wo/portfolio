@@ -36,15 +36,18 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
       className="m-auto max-h-[92vh] w-[calc(100%-2rem)] max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-ink-900 p-0 text-slate-300 shadow-2xl shadow-black/50 backdrop:bg-transparent"
     >
       {project && accent && (
-        <article className="relative">
-          <button
-            type="button"
-            onClick={() => ref.current?.close()}
-            className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-ink-950/80 text-slate-200 hover:text-white"
-            aria-label="Close case study"
-          >
-            <X className="h-5 w-5" />
-          </button>
+        <article>
+          {/* Zero-height sticky bar keeps the close button pinned while the dialog content scrolls. */}
+          <div className="sticky top-0 z-10 flex h-0 justify-end">
+            <button
+              type="button"
+              onClick={() => ref.current?.close()}
+              className="mr-4 mt-4 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-ink-950/90 text-slate-200 shadow-lg hover:text-white"
+              aria-label="Close case study"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
 
           <div className="grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
             {/* Left: summary */}
