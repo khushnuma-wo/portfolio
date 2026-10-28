@@ -33,7 +33,7 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
       onClose={handleClose}
       onClick={(e) => e.target === ref.current && ref.current?.close()}
       aria-labelledby="project-dialog-title"
-      className="m-auto max-h-[85vh] w-[calc(100%-2rem)] max-w-6xl overflow-y-auto rounded-2xl lg:overflow-hidden border border-white/10 bg-ink-900 p-0 text-slate-300 shadow-2xl shadow-black/50 backdrop:bg-transparent"
+      className="m-auto max-h-[92vh] w-[calc(100%-2rem)] max-w-6xl overflow-y-auto rounded-2xl lg:overflow-hidden border border-white/10 bg-ink-900 p-0 text-slate-300 shadow-2xl shadow-black/50 backdrop:bg-transparent"
     >
       {project && accent && (
         <article>
@@ -50,9 +50,9 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
           </div>
 
           {/* On large screens the dialog stays still and each column scrolls on its own. */}
-          <div className="grid lg:max-h-[calc(85vh-2px)] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div className="grid lg:max-h-[calc(92vh-2px)] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
             {/* Left: summary */}
-            <div className="border-b border-white/[0.06] lg:max-h-[calc(85vh-2px)] lg:overflow-y-auto lg:border-b-0 lg:border-r">
+            <div className="border-b border-white/[0.06] lg:max-h-[calc(92vh-2px)] lg:overflow-y-auto lg:border-b-0 lg:border-r">
               <div className="p-6 pr-16 sm:p-8 sm:pr-16 lg:pr-8">
                 <p className={`font-mono text-xs uppercase tracking-widest ${accent.text}`}>{project.category}</p>
                 <h2 id="project-dialog-title" className="mt-2 text-3xl font-bold tracking-tight">
@@ -83,7 +83,9 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
             </div>
 
             {/* Right: the work, grouped by area */}
-            <div className="p-6 sm:p-8 lg:max-h-[calc(85vh-2px)] lg:overflow-y-auto lg:pr-16">
+            {/* Outer padding stays fixed, so scrolled text stops short of the modal's top and bottom edges. */}
+            <div className="lg:flex lg:max-h-[calc(92vh-2px)] lg:flex-col lg:py-8">
+            <div className="p-6 sm:p-8 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:py-0 lg:pr-16">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">What I did</h3>
               <div className="mt-6 divide-y divide-white/[0.06]">
                 {project.details.map((group) => (
@@ -100,6 +102,7 @@ export function ProjectDialog({ project, onClose }: { project: Project | null; o
                   </section>
                 ))}
               </div>
+            </div>
             </div>
           </div>
         </article>
