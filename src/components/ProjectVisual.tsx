@@ -1,10 +1,31 @@
 import type { Project, ProjectAccent } from '../data/portfolio';
 
-export const accentStyles: Record<ProjectAccent, { text: string; border: string; bg: string; stroke: string; fill: string }> = {
-  emerald: { text: 'text-emerald-700 dark:text-emerald-300', border: 'border-emerald-500/30 dark:border-emerald-400/30', bg: 'bg-emerald-500/10', stroke: '#34d399', fill: '#064e3b' },
-  amber: { text: 'text-amber-700 dark:text-amber-300', border: 'border-amber-500/30 dark:border-amber-400/30', bg: 'bg-amber-500/10', stroke: '#fbbf24', fill: '#78350f' },
-  violet: { text: 'text-violet-700 dark:text-violet-300', border: 'border-violet-500/30 dark:border-violet-400/30', bg: 'bg-violet-500/10', stroke: '#a78bfa', fill: '#4c1d95' },
-  rose: { text: 'text-rose-700 dark:text-rose-300', border: 'border-rose-500/30 dark:border-rose-400/30', bg: 'bg-rose-500/10', stroke: '#fb7185', fill: '#881337' },
+// `art` sets the illustration colours per theme: tinted light background in light mode, dark panel in dark mode.
+export const accentStyles: Record<ProjectAccent, { text: string; border: string; bg: string; art: string }> = {
+  emerald: {
+    text: 'text-emerald-700 dark:text-emerald-300',
+    border: 'border-emerald-500/30 dark:border-emerald-400/30',
+    bg: 'bg-emerald-500/10',
+    art: 'bg-gradient-to-br from-emerald-50 to-teal-50 [--art-stroke:#059669] [--art-fill:#a7f3d0] dark:from-[#10141f] dark:to-[#10141f] dark:[--art-stroke:#34d399] dark:[--art-fill:#064e3b]',
+  },
+  amber: {
+    text: 'text-amber-700 dark:text-amber-300',
+    border: 'border-amber-500/30 dark:border-amber-400/30',
+    bg: 'bg-amber-500/10',
+    art: 'bg-gradient-to-br from-amber-50 to-orange-50 [--art-stroke:#d97706] [--art-fill:#fde68a] dark:from-[#10141f] dark:to-[#10141f] dark:[--art-stroke:#fbbf24] dark:[--art-fill:#78350f]',
+  },
+  violet: {
+    text: 'text-violet-700 dark:text-violet-300',
+    border: 'border-violet-500/30 dark:border-violet-400/30',
+    bg: 'bg-violet-500/10',
+    art: 'bg-gradient-to-br from-violet-50 to-indigo-50 [--art-stroke:#7c3aed] [--art-fill:#ddd6fe] dark:from-[#10141f] dark:to-[#10141f] dark:[--art-stroke:#a78bfa] dark:[--art-fill:#4c1d95]',
+  },
+  rose: {
+    text: 'text-rose-700 dark:text-rose-300',
+    border: 'border-rose-500/30 dark:border-rose-400/30',
+    bg: 'bg-rose-500/10',
+    art: 'bg-gradient-to-br from-rose-50 to-pink-50 [--art-stroke:#e11d48] [--art-fill:#fecdd3] dark:from-[#10141f] dark:to-[#10141f] dark:[--art-stroke:#fb7185] dark:[--art-fill:#881337]',
+  },
 };
 
 /**
@@ -23,19 +44,20 @@ export function ProjectVisual({ project, className = '' }: { project: Project; c
     );
   }
 
-  const { stroke, fill } = accentStyles[project.accent];
+  const { art } = accentStyles[project.accent];
+  const stroke = 'var(--art-stroke)';
+  const fill = 'var(--art-fill)';
 
   return (
-    // Illustrations stay dark in both themes so the coloured strokes keep their contrast.
-    <div className={`relative h-full w-full overflow-hidden bg-[#10141f] ${className}`}>
+    <div className={`relative h-full w-full overflow-hidden ${art} ${className}`}>
       <svg viewBox="0 0 400 220" className="h-full w-full" role="img" aria-label={`Abstract illustration for ${project.name}`} preserveAspectRatio="xMidYMid slice">
         <defs>
           <radialGradient id={`glow-${project.id}`} cx="70%" cy="20%" r="80%">
-            <stop offset="0%" stopColor={stroke} stopOpacity="0.28" />
+            <stop offset="0%" stopColor={stroke} stopOpacity="0.22" />
             <stop offset="100%" stopColor={stroke} stopOpacity="0" />
           </radialGradient>
           <pattern id={`dots-${project.id}`} width="16" height="16" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" fill="#ffffff" fillOpacity="0.06" />
+            <circle cx="1" cy="1" r="1" fill={stroke} fillOpacity="0.14" />
           </pattern>
         </defs>
         <rect width="400" height="220" fill={`url(#dots-${project.id})`} />

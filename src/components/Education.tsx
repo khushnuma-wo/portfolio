@@ -4,7 +4,7 @@ import { Reveal, SectionHeader } from './Reveal';
 
 export function Education() {
   return (
-    <section id="education" className="section bg-ink-900/40">
+    <section id="education" className="section section-band">
       <div className="container-page">
         <SectionHeader eyebrow="Education" title="Qualifications" />
 

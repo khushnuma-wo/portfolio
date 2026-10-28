@@ -10,7 +10,7 @@ export function Projects() {
   const [selected, setSelected] = useState<Project | null>(null);
 
   return (
-    <section id="projects" className="section bg-ink-900/40">
+    <section id="projects" className="section section-band">
       <div className="container-page">
         <SectionHeader
           eyebrow="Projects"

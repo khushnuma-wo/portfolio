@@ -6,7 +6,7 @@ export function Skills() {
   const ordered = [...skillGroups.filter((g) => g.primary), ...skillGroups.filter((g) => !g.primary)];
 
   return (
-    <section id="skills" className="section bg-ink-900/40">
+    <section id="skills" className="section section-band">
       <div className="container-page">
         <SectionHeader
           eyebrow="Skills"
