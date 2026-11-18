@@ -119,7 +119,7 @@ export const experience = [
   {
     company: 'WebOsmotic Pvt Ltd',
     role: 'Full-Stack Developer',
-    period: '2023 – Present',
+    period: '2023 – Nov 2026',
     location: 'Surat, India',
     summary:
       'Building and maintaining full-stack web and SaaS applications for client projects, from API design through to cloud deployment.',
