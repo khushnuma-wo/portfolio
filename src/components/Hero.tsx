@@ -85,7 +85,7 @@ export function Hero({ resumeAvailable }: { resumeAvailable: boolean }) {
 /** Abstract full-stack architecture diagram — decorative, describes the kind of systems built. */
 function StackDiagram() {
   const services = [
-    { label: 'MongoDB', sub: 'data' },
+    { label: 'PostgreSQL · MongoDB', sub: 'data' },
     { label: 'Stripe · Plaid', sub: 'payments' },
     { label: 'Socket.IO', sub: 'real-time' },
     { label: 'Cloud Run', sub: 'deploy' },
