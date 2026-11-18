@@ -17,6 +17,7 @@ export function Education() {
               <div>
                 <h3 className="text-base font-semibold">{item.degree}</h3>
                 <p className="mt-1 text-sm text-slate-400">{item.institution}</p>
+                <p className="mt-0.5 font-mono text-xs text-slate-500">{item.period}</p>
               </div>
             </Reveal>
           ))}

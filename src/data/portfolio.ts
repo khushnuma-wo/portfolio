@@ -35,7 +35,7 @@ export const profile = {
   email: 'khushnuma22.work@gmail.com',
   phone: '+91 7572965547',
   /** Leave '' until the real URLs are available — the links stay hidden while empty. */
-  linkedinUrl: '',
+  linkedinUrl: 'https://www.linkedin.com/in/khushnuma-baluchi-9b2371247/',
   githubUrl: '',
   /** Put the PDF at public/resume.pdf. The download buttons only appear when the file exists. */
   resumePath: '/resume.pdf',
@@ -48,13 +48,14 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    "I'm a Full Stack Developer with 3+ years of experience building and maintaining web and SaaS applications at WebOsmotic. My work spans the whole product: responsive frontends in React.js and Angular, backend services in Node.js, Express.js and NestJS, and data in MongoDB and Firebase Firestore — across both MERN and MEAN stacks.",
-    'Most of my time goes into the parts of a product that have to be right: authentication and role-based access, Stripe and Plaid payments and subscriptions, REST APIs that other teams and services depend on, real-time updates with Socket.IO, and scheduled background workflows.',
+    "I'm a Full Stack Developer with 3+ years of experience building and maintaining web and SaaS applications at WebOsmotic. My work spans the whole product: responsive frontends in React.js and Angular, backend services in Node.js, Express.js and NestJS, and data across SQL and NoSQL stores — PostgreSQL, MySQL, MongoDB and Firebase Firestore — with Redis caching, across both MERN and MEAN stacks.",
+    'Most of my time goes into the parts of a product that have to be right: authentication and role-based access, Stripe and Plaid payments and subscriptions, REST APIs and microservices that other teams and services depend on, real-time updates with Socket.IO, and scheduled background workflows.',
     'I also take features through to production — containerising applications with Docker, running them on Google Cloud Run, managing infrastructure as code, and automating deployments with GitHub Actions. I work directly with clients to understand requirements and keep delivery on track.',
   ],
   strengths: [
     'Full-stack web & SaaS development',
-    'REST API design & documentation',
+    'REST API design, documentation & microservices',
+    'SQL & NoSQL databases with Redis caching',
     'Authentication & role-based access control',
     'Payments, subscriptions & webhooks',
     'Real-time features with Socket.IO',
@@ -85,7 +86,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: 'Languages',
     primary: true,
-    skills: ['TypeScript', 'JavaScript', 'HTML5', 'CSS3'],
+    skills: ['TypeScript', 'JavaScript', 'SQL', 'HTML5', 'CSS3'],
   },
   {
     title: 'Cloud & DevOps',
@@ -97,8 +98,8 @@ export const skillGroups: SkillGroup[] = [
     skills: ['Stripe', 'Plaid', 'SendGrid', 'Dropbox Sign', 'Ecwid', 'Railz', 'ShipTime', 'Duda', 'Google Maps API'],
   },
   {
-    title: 'Databases',
-    skills: ['MongoDB', 'Firebase Firestore'],
+    title: 'Databases & Caching',
+    skills: ['SQL', 'PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Firebase Firestore'],
   },
   {
     title: 'Mobile',
@@ -106,7 +107,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: 'Architecture',
-    skills: ['MERN', 'MEAN', 'Multi-tenant SaaS', 'REST API design', 'Real-time applications', 'Third-party integrations'],
+    skills: ['MERN', 'MEAN', 'Microservices', 'Multi-tenant SaaS', 'REST API design', 'Real-time applications', 'Third-party integrations'],
   },
   {
     title: 'Tools',
@@ -422,10 +423,12 @@ export const education = [
   {
     degree: 'Master of Computer Applications (MCA)',
     institution: 'Veer Narmad South Gujarat University',
+    period: '2021 – 2023',
   },
   {
     degree: 'Bachelor of Computer Applications (BCA)',
     institution: 'UCCC & SPBCBA & SDHG College of BCA & IT',
+    period: '2018 – 2021',
   },
 ];
 
