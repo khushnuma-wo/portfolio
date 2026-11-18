@@ -125,13 +125,13 @@ export const experience = [
       'Building and maintaining full-stack web and SaaS applications for client projects, from API design through to cloud deployment.',
     points: [
       'Build and maintain full-stack web and SaaS applications using React.js, Angular, Node.js, Express.js, NestJS and TypeScript.',
-      'Work with MongoDB and Firebase Firestore as application data stores.',
-      'Design and document REST APIs for authentication, billing, subscriptions and third-party integrations.',
+      'Work with SQL (PostgreSQL, MySQL) and NoSQL (MongoDB, Firebase Firestore) databases, with Redis for caching.',
+      'Design and document REST APIs and microservices for authentication, billing, subscriptions and third-party integrations.',
       'Integrate Stripe and Plaid payments, OAuth and JWT authentication, and Socket.IO real-time features.',
       'Manage cloud deployments and CI/CD across GCP, Hetzner and DigitalOcean using Docker, Terraform and GitHub Actions.',
       'Communicate directly with clients to understand requirements, give technical guidance and support delivery.',
     ],
-    stack: ['React.js', 'Angular', 'Node.js', 'NestJS', 'TypeScript', 'MongoDB', 'Firestore', 'GCP', 'Docker'],
+    stack: ['React.js', 'Angular', 'Node.js', 'NestJS', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Redis', 'GCP', 'Docker'],
   },
 ];
 
