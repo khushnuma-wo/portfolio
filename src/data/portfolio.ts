@@ -51,11 +51,13 @@ export const about = {
     "I'm a Full Stack Developer with 3+ years of experience building and maintaining web and SaaS applications at WebOsmotic. My work spans the whole product: responsive frontends in React.js and Angular, backend services in Node.js, Express.js and NestJS, and data across SQL and NoSQL stores — PostgreSQL, MySQL, MongoDB and Firebase Firestore — with Redis caching, across both MERN and MEAN stacks.",
     'Most of my time goes into the parts of a product that have to be right: authentication and role-based access, Stripe and Plaid payments and subscriptions, REST APIs and microservices that other teams and services depend on, real-time updates with Socket.IO, and scheduled background workflows.',
     'I also take features through to production — containerising applications with Docker, running them on Google Cloud Run, managing infrastructure as code, and automating deployments with GitHub Actions. I work directly with clients to understand requirements and keep delivery on track.',
+    'I use AI-powered development tools — Cursor, Windsurf, Claude, ChatGPT and DeepSeek — to speed up feature development, refactoring and debugging, while keeping code quality and review standards in place.',
   ],
   strengths: [
     'Full-stack web & SaaS development',
     'REST API design, documentation & microservices',
     'SQL & NoSQL databases with Redis caching',
+    'AI-assisted development (Cursor, Claude, ChatGPT)',
     'Authentication & role-based access control',
     'Payments, subscriptions & webhooks',
     'Real-time features with Socket.IO',
@@ -110,6 +112,10 @@ export const skillGroups: SkillGroup[] = [
     skills: ['MERN', 'MEAN', 'Microservices', 'Multi-tenant SaaS', 'REST API design', 'Real-time applications', 'Third-party integrations'],
   },
   {
+    title: 'AI-Powered Dev Tools',
+    skills: ['Cursor', 'Windsurf', 'Claude', 'ChatGPT', 'DeepSeek'],
+  },
+  {
     title: 'Tools',
     skills: ['Git', 'GitHub', 'Assembla', 'Asana', 'MongoDB Compass', 'NoSQLBooster'],
   },
@@ -119,7 +125,7 @@ export const experience = [
   {
     company: 'WebOsmotic Pvt Ltd',
     role: 'Full-Stack Developer',
-    period: '2023 – Nov 2026',
+    period: 'July 2023 – Nov 2026',
     location: 'Surat, India',
     summary:
       'Building and maintaining full-stack web and SaaS applications for client projects, from API design through to cloud deployment.',
@@ -129,6 +135,7 @@ export const experience = [
       'Design and document REST APIs and microservices for authentication, billing, subscriptions and third-party integrations.',
       'Integrate Stripe and Plaid payments, OAuth and JWT authentication, and Socket.IO real-time features.',
       'Manage cloud deployments and CI/CD across GCP, Hetzner and DigitalOcean using Docker, Terraform and GitHub Actions.',
+      'Use AI-powered development tools (Cursor, Windsurf, Claude, ChatGPT, DeepSeek) to accelerate feature development, refactoring and debugging while maintaining clean code standards.',
       'Communicate directly with clients to understand requirements, give technical guidance and support delivery.',
     ],
     stack: ['React.js', 'Angular', 'Node.js', 'NestJS', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Redis', 'GCP', 'Docker'],
